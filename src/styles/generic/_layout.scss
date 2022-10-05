@@ -1,0 +1,39 @@
+html,
+body {
+  @include text-rendering;
+}
+
+html {
+  $base-fontsize: 16px;
+
+@include fluidBaseRem(375, 750, 16, 32);
+
+  font-family: sans-serif;
+
+  -webkit-marquee-increment: 0vw; // fluid typo fix for safari https://www.sarasoueidan.com/blog/safari-fluid-typography-bug-fix/
+}
+
+body {
+  min-height: 100vh;
+  overflow: auto;
+
+  background-color: $wht;
+
+  color: $blk;
+
+  font-kerning: none;
+}
+
+@include mq-regular {
+  html {
+    $base-fontsize: 18px;
+
+@include fluidBaseRem(1920, 3840, 18, 36);
+  }
+}
+
+// @media (min-width: 1600px) {
+//     html {
+//         font-size: 16px;
+//     }
+// }

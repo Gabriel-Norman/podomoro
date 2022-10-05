@@ -1,0 +1,49 @@
+@mixin text-rendering {
+  font-weight: normal;
+  font-smooth: always;
+
+  -webkit-font-smoothing: antialiased;
+  -khtml-font-smoothing: antialiased;
+  -apple-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin fluidBaseRem(
+  $minimumViewportWidth,
+  $maximumViewportWidth,
+  $minimumSize,
+  $maximumSize
+) {
+  font-size: calc(
+  #{$minimumSize}px + (#{$maximumSize} - #{$minimumSize}) *
+  (
+  (100vw - #{$minimumViewportWidth}px) /
+  (#{$maximumViewportWidth} - #{$minimumViewportWidth})
+  )
+  );
+}
+
+// Adaptive's mixins
+@mixin mq-extra-narrow {
+  @media (max-width: $breakpoint-narrow) {
+    @content;
+  }
+}
+
+@mixin mq-narrow {
+  @media (min-width: $breakpoint-narrow) {
+    @content;
+  }
+}
+
+@mixin mq-regular {
+  @media (min-width: $breakpoint-regular) {
+    @content;
+  }
+}
+
+@mixin mq-wide {
+  @media (min-width: $breakpoint-wide) {
+    @content;
+  }
+}

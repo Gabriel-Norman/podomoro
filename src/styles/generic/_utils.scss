@@ -1,0 +1,92 @@
+//dimensions
+.x {
+  width: 100%;
+}
+.y {
+  height: 100%;
+}
+//display
+.dn {
+  display: none;
+}
+.db {
+  display: block;
+}
+.g {
+  display: grid;
+}
+.f {
+  display: flex;
+}
+
+//position
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.fix {
+  position: fixed;
+}
+.sti {
+  position: sticky;
+}
+.top {
+  top: 0;
+}
+.right {
+  right: 0;
+}
+.bottom {
+  bottom: 0;
+}
+.left {
+  left: 0;
+}
+
+@for $j from 1 through 10 {
+  .z#{$j} {
+    z-index: $j;
+  }
+}
+//margins
+$i: 0;
+@while $i < 100 {
+  $i: $i + 5;
+  .mt#{$i} {
+    margin-top: #{$i / 10}rem;
+  }
+  .mr#{$i} {
+    margin-right: #{$i / 10}rem;
+  }
+  .mb#{$i} {
+    margin-bottom: #{$i / 10}rem;
+  }
+  .ml#{$i} {
+    margin-left: #{$i / 10}rem;
+  }
+}
+.mta {
+  margin-top: auto;
+}
+.mra {
+  margin-right: auto;
+}
+.mba {
+  margin-bottom: auto;
+}
+.mla {
+  margin-left: auto;
+}
+//flex and grid helper
+.jcb {
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+@for $j from 1 through 6 {
+  .gbox#{$j} {
+    grid-template-columns: repeat($j, 1fr);
+    grid-gap: 0 $g-gutter;
+  }
+}

@@ -1,0 +1,28 @@
+//
+// Theme Name: podomoro
+// Author: Gabriel Norman
+// Description: WP boilerplate called podomoro
+// Version: 1.0.0
+// Tested up to: 6.0
+// Requires PHP: 7
+// License: GNU General Public License v2 or later
+// License URI: LICENSE
+// Text Domain: podomoro
+//
+
+// Normalize | Utils | Font and colors
+@import 'generic/normalize';
+@import 'generic/variables';
+@import 'generic/fonts';
+@import 'generic/mixins';
+@import 'generic/functions';
+@import 'generic/layout';
+
+// @import 'generic/utils';
+@import 'generic/cookie';
+
+// Pulisce Visual Composer
+@import 'generic/cleanvc';
+
+// My style
+@import 'app';
