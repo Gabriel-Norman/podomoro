@@ -4,7 +4,7 @@ import "../styles/style.scss";
 // Important to initialize the Global Events
 import { Emitter } from "./events";
 
-import "./cookie.js";
+// import CookieBar from "./components/CookieBar";
 // import "./navigation.js";
 
 class App {
