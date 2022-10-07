@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "gsap": "^3.11.2",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "tiny-emitter": "^2.1.0"
   }
 }
