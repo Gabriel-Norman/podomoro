@@ -30,3 +30,6 @@ yarn-error.log*
 
 # package
 package-lock.json
+
+#src
+!/src
