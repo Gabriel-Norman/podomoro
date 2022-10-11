@@ -1,28 +1,33 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import liveReload from "vite-plugin-live-reload";
 const process = require("process");
 const { resolve } = require("path");
 
-export default defineConfig({
-  plugins: [liveReload(__dirname + "/**/*.php")],
-  root: "",
-  base: process.env.NODE_ENV === "development" ? "/" : "/dist/",
-  build: {
-    outDir: resolve(__dirname, "./dist"),
-    emptyOutDir: true,
+export default ({ mode }) => {
+  process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
-    manifest: true,
+  return defineConfig({
+    plugins: [liveReload(__dirname + "/**/*.php")],
+    root: "",
+    base: mode === "development" ? "/" : "/dist/",
+    build: {
+      outDir: resolve(__dirname, "./dist"),
+      emptyOutDir: true,
 
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, "./src/js/app.js"),
+      manifest: true,
+
+      rollupOptions: {
+        input: {
+          main: resolve(__dirname, "./src/js/app.js"),
+        },
       },
     },
-  },
-  server: {
-    cors: true,
-    origin: "http://127.0.0.1:" + 3000,
-    strictPort: true,
-    port: 3000,
-  },
-});
+    server: {
+      cors: true,
+      origin: "http://127.0.0.1:" + 3000,
+      strictPort: true,
+      port: 3000,
+      open: process.env.VITE_WEBSITE_URL || "",
+    },
+  });
+};

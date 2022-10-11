@@ -18,19 +18,23 @@ class MqTracker {
   _debugger() {
     const debugWrapper = document.createElement("div");
     debugWrapper.className = "mq-debugger";
-    debugWrapper.style.position = "fixed";
-    debugWrapper.style.bottom = 0;
-    debugWrapper.style.left = 0;
-    debugWrapper.style.padding = "3px 7px 3px 5px";
-    debugWrapper.style.borderTopRightRadius = "5px";
-    debugWrapper.style.backgroundColor = "red";
+    Object.assign(debugWrapper.style, {
+      position: "fixed",
+      bottom: 0,
+      left: 0,
+      padding: "3px 7px 3px 5px",
+      borderTopRightRadius: "5px",
+      backgroundColor: "red",
+    });
 
     const debugText = document.createElement("p");
     debugText.className = "mq-debugger__text";
-    debugText.style.margin = 0;
-    debugText.style.fontFamily = "sans-serif";
-    debugText.style.fontSize = "12px";
-    debugText.style.color = "white";
+    Object.assign(debugText.style, {
+      margin: 0,
+      fontFamily: "sans-serif",
+      fontSize: "12px",
+      color: "white",
+    });
 
     debugWrapper.appendChild(debugText);
     document.body.appendChild(debugWrapper);
