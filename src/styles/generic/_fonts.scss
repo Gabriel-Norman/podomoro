@@ -1,3 +1,17 @@
+@mixin font-face-swap($name, $folder, $file, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $name;
+    font-weight: $weight;
+    font-style: $style;
+
+    src: url('../assets/fonts/#{$folder}/#{$file}.woff2') format('woff2'),
+    url('../assets/fonts/#{$folder}/#{$file}.woff') format('woff');
+    font-display: swap;
+  }
+}
+
+// @include font-face-swap('Font name', 'folder-name', 'file-name', weight);
+
 // .f-os-sb,
 // .f-os-sb *
 //     font-family: 'Open Sans', sans-serif
@@ -19,10 +33,12 @@
     font-size: calc(#{$j}rem / 18) !important;
   }
 }
+
 .lh-1-4,
 .lh-1-4 * {
   line-height: 1.4;
 }
+
 .fstyle-it {
   font-style: italic;
 }

@@ -9,7 +9,10 @@ export default ({ mode }) => {
   return defineConfig({
     plugins: [liveReload(__dirname + "/**/*.php")],
     root: "",
-    base: mode === "development" ? "/" : "/dist/",
+    base:
+      mode === "development"
+        ? "/"
+        : `/wp-content/themes/${process.env.VITE_THEME_NAME}/dist/`,
     build: {
       outDir: resolve(__dirname, "./dist"),
       emptyOutDir: true,

@@ -6,7 +6,7 @@
  */
 
 // Disable Gutenberg from BE
-add_filter('use_block_editor_for_post', '__return_false');
+add_filter( 'use_block_editor_for_post', '__return_false' );
 add_filter( 'use_widgets_block_editor', '__return_false' );
  
 // Disable Gutenberg Block Library CSS from loading on the frontend
@@ -16,6 +16,8 @@ function smartwp_remove_wp_block_library_css(){
   wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
  }
  add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
+ remove_filter('render_block', 'wp_render_layout_support_flag', 10, 2 );
+ remove_filter('render_block', 'gutenberg_render_layout_support_flag', 10, 2 );
  
  // Disable the emoji's
  function disable_emojis() {
@@ -41,13 +43,13 @@ function smartwp_remove_wp_block_library_css(){
  remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
  
   // Cleanup head
-  remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
-  remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+  remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10);
+  remove_action( 'template_redirect', 'rest_output_link_header', 11, 0);
   remove_action( 'wp_head', 'feed_links_extra', 3 );
   remove_action( 'wp_head', 'feed_links', 2 );
-  remove_action ('wp_head', 'rsd_link');
-  remove_action( 'wp_head', 'wlwmanifest_link');
-  remove_action( 'wp_head', 'wp_shortlink_wp_head');
+  remove_action( 'wp_head', 'rsd_link' );
+  remove_action( 'wp_head', 'wlwmanifest_link' );
+  remove_action( 'wp_head', 'wp_shortlink_wp_head' );
   remove_action( 'wp_head', 'wp_generator' );
 
  /**

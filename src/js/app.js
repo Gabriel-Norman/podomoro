@@ -5,7 +5,6 @@ import "../styles/style.scss";
 import { Emitter } from "./events";
 
 // import CookieBar from "./components/CookieBar";
-// import "./navigation.js";
 
 class App {
   constructor() {

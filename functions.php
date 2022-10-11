@@ -56,9 +56,6 @@ add_action( 'widgets_init', 'cookie_widgets_init' );
 // function podo_scripts() {
 // 	// wp_enqueue_script('jquery', 'http://code.jquery.com/jquery-latest.min.js', array(), false, true);
 
-// 	wp_enqueue_style( 'podo-style', get_template_directory_uri() . '/dist/css/style.css', array(), PODO_V );
-// 	wp_enqueue_script( 'podo-js', get_template_directory_uri() . '/dist/js/bundle.min.js', array(), PODO_V, true );
-
 // 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 // 		wp_enqueue_script( 'comment-reply' );
 // 	}
