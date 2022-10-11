@@ -36,10 +36,20 @@ function smartwp_remove_wp_block_library_css(){
  }
  add_action( 'wp_footer', 'my_deregister_scripts' );
 
- //Disable WP 5.9 global style and SVGs
+ // Disable WP 5.9 global style and SVGs
  remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
  remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
  
+  // Cleanup head
+  remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+  remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+  remove_action( 'wp_head', 'feed_links_extra', 3 );
+  remove_action( 'wp_head', 'feed_links', 2 );
+  remove_action ('wp_head', 'rsd_link');
+  remove_action( 'wp_head', 'wlwmanifest_link');
+  remove_action( 'wp_head', 'wp_shortlink_wp_head');
+  remove_action( 'wp_head', 'wp_generator' );
+
  /**
   * Filter function used to remove the tinymce emoji plugin.
   *

@@ -10,8 +10,8 @@ class Raf {
     gsap.ticker.add(this._handleTick);
   }
 
-  _handleTick = (time) => {
-    Emitter.emit("raf", { time });
+  _handleTick = (time, deltaTime) => {
+    Emitter.emit("raf", { time, delta: deltaTime });
   };
 }
 
