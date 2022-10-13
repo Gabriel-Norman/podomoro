@@ -44,7 +44,7 @@ if ( post_password_required() ) {
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h2>
 
 		<?php the_comments_navigation(); ?>
 
@@ -57,7 +57,7 @@ if ( post_password_required() ) {
 				)
 			);
 			?>
-		</ol><!-- .comment-list -->
+		</ol>
 
 		<?php
 		the_comments_navigation();
@@ -74,4 +74,4 @@ if ( post_password_required() ) {
 	comment_form();
 	?>
 
-</div><!-- #comments -->
+</div>

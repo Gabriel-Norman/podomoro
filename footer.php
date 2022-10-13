@@ -20,8 +20,8 @@
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'podo' ), 'podo', '<a href="https://gnrm.se/">Gabriel Norman</a>' );
 				?>
-		</div><!-- .site-info -->
-	</footer><!-- #ftr -->
+		</div>
+	</footer>
 </div><!-- #page -->
 
 <?php

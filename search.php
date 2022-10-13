@@ -21,7 +21,7 @@ get_header();
 					printf( esc_html__( 'Search Results for: %s', 'podo' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h1>
-			</header><!-- .page-header -->
+			</header>
 
 			<?php
 			/* Start the Loop */
@@ -46,7 +46,7 @@ get_header();
 		endif;
 		?>
 
-	</main><!-- #main -->
+	</main>
 
 <?php
 get_sidebar();
